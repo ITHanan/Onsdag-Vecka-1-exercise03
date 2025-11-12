@@ -5,11 +5,17 @@ on:
 
 jobs:
   deploy:
-    name: 🧩 Deploy with SERVICE_NAME
+    name: Deploy with SERVICE_NAME
     runs-on: ubuntu-latest
     environment: development
+
+
     steps:
-      - name: 🏁 Start Deployment
-        shell: bash
-        run: |
-          echo "deploying: ${{ vars.SERVICE_NAME }}"
+      - name: Print environment
+        run: echo "Deploying to ${{ github.environment }}"
+
+      - name: Print service name
+        run: echo "Deploying:${{ vars.SERVICE_NAME }}"
+
+      - name: Print masked secret
+        run: echo "API Key:${{ secrets.MY_API_KEY }}"
