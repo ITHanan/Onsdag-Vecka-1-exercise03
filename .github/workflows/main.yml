@@ -1,0 +1,19 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - name: Print environment
+        run: echo "Deploying to ${{ github.environment }}"
+
+      - name: Print service name
+        run: echo "Deploying:${{ vars.SERVICE_NAME }}"
+
+      - name: Print masked secret
+        run: echo "API Key:${{ secrets.MY_API_KEY }}"
