@@ -7,7 +7,7 @@ jobs:
   deploy:
       name:  Deploy with SERVICE_NAME
       runs-on: ubuntu-latest
-      environment: development
+      environment: development  
 
       steps:
       - name: Print environment
