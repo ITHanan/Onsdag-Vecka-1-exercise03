@@ -11,10 +11,13 @@ jobs:
 
       steps:
       - name: Print environment
+        shell: bash
         run: echo "Deploying to ${{ github.environment }}"
 
       - name: Print service name
+        shell: bash
         run: echo "Deploying:${{ vars.SERVICE_NAME }}"
 
       - name: Print masked secret
+        shell: bash
         run: echo "API Key:${{ secrets.MY_API_KEY }}"
